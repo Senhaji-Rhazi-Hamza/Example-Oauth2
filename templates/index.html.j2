@@ -1,0 +1,20 @@
+{% extends "layout.html.j2" %}
+
+{% block title %} Flask app cartelis {% endblock %}
+
+{% block body %}
+
+<h1>Welcome!</h1>
+
+<p>Hello! This is a minimal app that allows you to deduplicate your contacts.</p>
+{% if granted_access %}
+<ol>
+    <li><a href="/oauth2callback">Handle duplicated.</a></li>
+</ol>
+{% else %}
+<ol>
+    <li><a href="/oauth2callback"> Grant access.</a></li>
+</ol>
+{% endif %}
+
+{% endblock %}
